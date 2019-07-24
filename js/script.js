@@ -1,6 +1,6 @@
 "use strict";
 
-var url = 'http://api.icndb.com/jokes/random';
+var url = 'https://api.icndb.com/jokes/random';
 
 var button = document.getElementById('get-joke');
 button.addEventListener('click', function(){
@@ -8,6 +8,7 @@ button.addEventListener('click', function(){
 });
 
 var paragraph = document.getElementById('joke');
+
 
 function getJoke() {
     var xhr = new XMLHttpRequest();
@@ -17,4 +18,6 @@ function getJoke() {
       paragraph.innerHTML = response.value.joke;
     });
     xhr.send();
-  }
+}
+
+window.onload = getJoke;
